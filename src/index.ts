@@ -1,13 +1,16 @@
-import { CollectionInterface } from './collection';
+import { CollectionInterface, MechanicalKeySwitch } from './collection';
+import { fetchById, getAllSwitches, search } from './search';
 import { Brand, Manufacturer, Switch } from './switch';
 import collection from './switches';
-import { MechanicalKeySwitch } from './collection';
 
 export {
-    collection,
-    CollectionInterface,
-    Switch,
     Brand,
+    CollectionInterface,
     Manufacturer,
     MechanicalKeySwitch,
+    Switch,
+    collection,
+    fetchById,
+    getAllSwitches,
+    search,
 };
