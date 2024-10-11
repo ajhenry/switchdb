@@ -7,7 +7,7 @@ import {
 import { Color, Force, Tolerance, Travel } from '../../../types';
 
 export default {
-    model: 'Custom Series',
+    model: 'V2',
     variation: 'Pink',
     profile: 'regular',
     stem: StemMX.Regular(Material.POM(Color.Opaque('#FFB6C1'))),
