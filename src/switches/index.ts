@@ -6,6 +6,7 @@ import gSquare from './g-square';
 import gateron from './gateron';
 import invyr from './invyr';
 import kaihua from './kaihua';
+import ktt from './ktt';
 import moondrop from './moondrop';
 import outemu from './outemu';
 import unknown from './unknown';
@@ -18,6 +19,7 @@ export default (collection: CollectionInterface): void => {
     gateron(collection);
     invyr(collection);
     kaihua(collection);
+    ktt(collection);
     moondrop(collection);
     outemu(collection);
     unknown(collection);

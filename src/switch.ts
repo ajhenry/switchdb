@@ -31,7 +31,7 @@ export type MaterialType =
 export class Material {
     private constructor(
         public readonly type?: MaterialType,
-        public readonly color?: Color
+        public readonly color?: Color,
     ) {}
 
     public static Unspecified(color?: Color): Material {
@@ -80,7 +80,7 @@ export class StemMX implements StemBase {
 
     private constructor(
         public readonly design: 'regular' | 'box' | 'partial_box' | 'circular',
-        public readonly material: Material
+        public readonly material: Material,
     ) {}
 
     public static Regular(material: Material): StemMX {
@@ -109,7 +109,10 @@ type StainlessSteelSpringForm =
     | 'short'
     | 'long'
     | 'thick'
-    | 'double_stage';
+    | 'double_stage'
+    | 'progressive'
+    | 'extension'
+    | 'two-stage';
 type StainlessSteelSpringCoating = 'gold' | 'black';
 
 export class SpringStainlessSteel implements SpringBase {
@@ -117,37 +120,55 @@ export class SpringStainlessSteel implements SpringBase {
 
     private constructor(
         public readonly form: StainlessSteelSpringForm,
-        public readonly coating?: StainlessSteelSpringCoating
+        public readonly coating?: StainlessSteelSpringCoating,
     ) {}
 
     public static Regular(
-        coating?: StainlessSteelSpringCoating
+        coating?: StainlessSteelSpringCoating,
     ): SpringStainlessSteel {
         return new SpringStainlessSteel('regular', coating);
     }
 
     public static Short(
-        coating?: StainlessSteelSpringCoating
+        coating?: StainlessSteelSpringCoating,
     ): SpringStainlessSteel {
         return new SpringStainlessSteel('short', coating);
     }
 
     public static Long(
-        coating?: StainlessSteelSpringCoating
+        coating?: StainlessSteelSpringCoating,
     ): SpringStainlessSteel {
         return new SpringStainlessSteel('long', coating);
     }
 
     public static Thick(
-        coating?: StainlessSteelSpringCoating
+        coating?: StainlessSteelSpringCoating,
     ): SpringStainlessSteel {
         return new SpringStainlessSteel('thick', coating);
     }
 
     public static DoubleStage(
-        coating?: StainlessSteelSpringCoating
+        coating?: StainlessSteelSpringCoating,
     ): SpringStainlessSteel {
         return new SpringStainlessSteel('double_stage', coating);
+    }
+
+    public static Progressive(
+        coating?: StainlessSteelSpringCoating,
+    ): SpringStainlessSteel {
+        return new SpringStainlessSteel('progressive', coating);
+    }
+
+    public static Extension(
+        coating?: StainlessSteelSpringCoating,
+    ): SpringStainlessSteel {
+        return new SpringStainlessSteel('extension', coating);
+    }
+
+    public static TwoStage(
+        coating?: StainlessSteelSpringCoating,
+    ): SpringStainlessSteel {
+        return new SpringStainlessSteel('two-stage', coating);
     }
 }
 
