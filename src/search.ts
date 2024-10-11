@@ -11,9 +11,15 @@ const createId = (
     brand: Brand,
     sw: Switch,
 ): string => {
-    return `${manufacturer.name}-${brand.name}-${sw.model}-${sw.variation}`
-        .replace(' ', '-')
-        .toLowerCase();
+    let id = `${manufacturer.name}-${brand.name}-${sw.model}-${sw.profile}`;
+
+    if (sw.variation && sw.variation !== 'undefined') {
+        id = `${manufacturer.name}-${brand.name}-${sw.model}-${sw.variation}-${sw.profile}`;
+    }
+
+    id = id.replace(/\s/g, '-').toLowerCase();
+
+    return id;
 };
 
 const collector: CollectionInterface = {
