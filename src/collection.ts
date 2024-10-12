@@ -5,6 +5,7 @@ export interface MechanicalKeySwitch {
     readonly brand: Brand;
     readonly manufacturer: Manufacturer;
     readonly spec: Switch;
+    readonly friendlyName: string;
 }
 
 export interface CollectionInterface {

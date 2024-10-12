@@ -1,8 +1,8 @@
 import {
     Material,
-    Switch,
-    StemMX,
     SpringStainlessSteel,
+    StemMX,
+    Switch,
 } from '../../../switch';
 import { Color, Force, Tolerance, Travel } from '../../../types';
 

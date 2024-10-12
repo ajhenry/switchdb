@@ -1,7 +1,7 @@
 import {
     Material,
-    StemMX,
     SpringStainlessSteel,
+    StemMX,
     Switch,
 } from '../../../switch';
 import { Color, Force, Tolerance, Travel } from '../../../types';
@@ -29,6 +29,6 @@ export default {
     },
     force: {
         actuation: Force.GramForce(55, Tolerance.PlusMinus(5)),
-        bottom: Force.EstimatedGramForce(70),
+        bottom: Force.GramForce(65, Tolerance.PlusMinus(5)),
     },
 } satisfies Switch;

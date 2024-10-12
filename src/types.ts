@@ -14,7 +14,7 @@ export class Tolerance {
 
     private constructor(
         public readonly sign: ToleranceSign,
-        public readonly value: number
+        public readonly value: number,
     ) {}
 }
 
@@ -39,7 +39,7 @@ export class Force {
     }
 
     static EstimatedGramForce(value: number): Force {
-        return new Force(ForceUnit.Centinewton, value, undefined, true);
+        return new Force(ForceUnit.GramForce, value, undefined, true);
     }
 
     static Zero(unit: ForceUnit): Force {
@@ -50,7 +50,7 @@ export class Force {
         public readonly unit: ForceUnit,
         public readonly value: number,
         public readonly tolerance?: Tolerance,
-        public readonly estimated: boolean = false
+        public readonly estimated: boolean = false,
     ) {}
 
     convert(to: ForceUnit, round = false): Force {
@@ -90,7 +90,7 @@ export class Force {
             this.unit,
             Math.floor(this.value),
             this.tolerance,
-            this.estimated
+            this.estimated,
         );
     }
 
@@ -99,7 +99,7 @@ export class Force {
             this.unit,
             Math.ceil(this.value),
             this.tolerance,
-            this.estimated
+            this.estimated,
         );
     }
 }
@@ -116,7 +116,7 @@ export class Travel {
     constructor(
         public readonly unit: TravelUnit,
         public readonly value: number,
-        public readonly tolerance?: Tolerance
+        public readonly tolerance?: Tolerance,
     ) {}
 
     compare(other: Travel): number {
@@ -141,7 +141,7 @@ export class Color {
 
     private constructor(
         public readonly color: string | null,
-        public readonly transparent: boolean
+        public readonly transparent: boolean,
     ) {}
 
     public static Opaque(color: string): Color {

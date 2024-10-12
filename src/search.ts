@@ -22,6 +22,20 @@ const createId = (
     return id;
 };
 
+const toFriendlyName = (_: Manufacturer, brand: Brand, sw: Switch) => {
+    let baseLabel = `${brand.name} ${sw.model}`;
+
+    if (sw.variation && sw.variation !== 'undefined') {
+        baseLabel = `${baseLabel} ${sw.variation}`;
+    }
+
+    if (sw.profile === 'low') {
+        baseLabel = `${baseLabel} (Low Profile)`;
+    }
+
+    return baseLabel;
+};
+
 const collector: CollectionInterface = {
     add: (manufacturer) => {
         manufacturers.push(manufacturer);
@@ -29,6 +43,7 @@ const collector: CollectionInterface = {
             brand.switches.forEach((sw) => {
                 switches.push({
                     id: createId(manufacturer, brand, sw),
+                    friendlyName: toFriendlyName(manufacturer, brand, sw),
                     brand: brand,
                     manufacturer: manufacturer,
                     spec: sw,
