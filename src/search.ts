@@ -60,7 +60,7 @@ export const search = (term: string, count = 10): MechanicalKeySwitch[] => {
     return results.map((result) => result.item);
 };
 
-export const fetchById = (id: string): MechanicalKeySwitch | null => {
+export const getSwitchById = (id: string): MechanicalKeySwitch | null => {
     initCollector();
     return collector.getById(id);
 };
