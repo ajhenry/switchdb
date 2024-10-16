@@ -1,7 +1,7 @@
 import Fuse from 'fuse.js';
 import { collection } from '.';
 import { CollectionInterface, MechanicalKeySwitch } from './collection';
-import { Brand, Manufacturer, Switch } from './switch';
+import type { Brand, Manufacturer, Switch } from './switch';
 
 const manufacturers: Manufacturer[] = [];
 const switches: MechanicalKeySwitch[] = [];
