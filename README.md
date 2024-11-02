@@ -1,6 +1,6 @@
 # SwitchDB
 
-A database, and DSL, of mechanical keyboard switches. Served as a website at [https://anyswitch.xyz](https://anyswitch.xyz)
+A database, and DSL, of mechanical keyboard switches. This dataset powers <https://keebreviews.com>, and is meant to be a comprehensive list of all mechanical keyboard switches.
 
 ## Contributing
 
@@ -26,8 +26,6 @@ When opening a PR, please link to an existing documentation or proof regarding t
 
 ## Acknowledgments & License
 
-This project is meant entertainment purposes only. It is **not** meant to provide official specification of mechanical key switches. Always refer to the official data sheets / manufacturer website for official specifications.
-
-All brand and manufacturer logos, mentions, product names and images are property of their respective owners, unless otherwise stated.
+This project is based on [skwee357/switchdb](https://github.com/skwee357/switchdb).
 
 Refer to [LICENSE](./LICENSE) file for license for this project.
